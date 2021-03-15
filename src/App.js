@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       chosenTeams: []
     }
-    this.chooseTeam = this.chooseTeam.bind(this);
+    this.addTeam = this.addTeam.bind(this);
   }
 
   componentDidMount(){

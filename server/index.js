@@ -1,14 +1,14 @@
 const express = require('express'),
     tlCtrl = require('./controllers/TeamList'),
     ctCtrl = require('./controllers/ChosenTeams'),
-    port = 3000,
+    port = 4747,
     app = express();
 
 app.use(express.json());
 
 
 //TeamList (tlCtrl) endpoint
-app.get('/api/', tlCtrl.getAvailableTeams);
+app.get('/api/teams', tlCtrl.getAvailableTeams);
 
 //ChosenTeams (ctCtrl) endpoints
 app.get('/api/', ctCtrl.getChosenTeams);

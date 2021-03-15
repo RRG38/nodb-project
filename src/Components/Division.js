@@ -4,10 +4,10 @@ import ChosenTeams from './ChosenTeams';
 const Division = props => {
     const mappedTeams = props.chosenTeams.map((team, i) => (
         <ChosenTeams
-        key={i}
-        team={team}
-        nameFn={props.nameFn}
-        releaseFn={props.releaseFn}/>
+            key={i}
+            team={team}
+            nameFn={props.nameFn}
+            releaseFn={props.releaseFn}/>
     ))
 
     return (
