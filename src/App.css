@@ -2,3 +2,9 @@
   text-align: center;
   background-color: green;
 }
+
+.hockey-flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
