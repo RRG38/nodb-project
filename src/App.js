@@ -11,14 +11,43 @@ class App extends Component {
     this.state = {
       chosenTeams: []
     }
+    this.chooseTeam = this.chooseTeam.bind(this);
   }
+
+  componentDidMount(){
+    axios.get('/api/chosen-team')
+      .then(res => {
+        this.setState({ chosenTeams: res.data})
+      })
+      .catch(err => console.log(err))
+  }
+
+addTeam(team){
+  axios.post('/api/chosen-team', {team: team})
+    .then(res => {
+      this.setState({ chosenTeams: res.data })
+    })
+    .catch(err => console.log(err))
+}
+
+removeTeam = (id) => {
+  axios.delete(`/api/chosen-team/${id}`)
+    .then(res => {
+      this.setState({ chosenTeams: res.data })
+    })
+    .catch(err => console.log(err))
+}
+
   render(){
     return (
-      <body>
+      <div className="App">
         <Header />
-        <Finder />
-        <Division />
-      </body>
+        <Finder 
+          addFn={this.addTeam}/>
+        <Division 
+          chosenTeams={this.state.addTeam}
+          removeFn={this.removeTeam}/>
+      </div>
     )
   }
 }

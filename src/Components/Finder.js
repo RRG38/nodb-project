@@ -16,5 +16,27 @@ class Finder extends Component {
 
     getAvailableTeams = () => {
         axios.get('/api/')
+            .then(res => {
+                this.setState({availableTeams: res.date});
+            })
+            .catch(err => console.log(err));
+    }
+
+    render(){
+        console.log(this.state.availableTeams)
+        const mappedTeams = this.state.availableTeams.map((team, i) => (
+            <TeamList
+                key={i}
+                team={team}
+                addFn={this.props.addFn}
+                refreshFn={this.getAvailableTeams}/>
+        ))
+        return (
+            <div className='hockey-flex'>
+                {mappedTeams}
+            </div>
+        )
     }
 }
+
+export default Finder;

@@ -37,7 +37,7 @@ class ChosenTeams extends Component {
                 : (
                     <div>
                         <p>{this.props.team.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
+                        <button onClick={this.handleToggle}>Edit Division Name</button>
                     </div>
                 )}
                 <button onClick={() => this.props.releaseFn(this.props.team.id)}>Release</button>

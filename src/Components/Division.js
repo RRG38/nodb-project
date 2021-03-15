@@ -1,10 +1,9 @@
 import React from 'react';
 import ChosenTeams from './ChosenTeams';
-import TeamList from './TeamList';
 
 const Division = props => {
     const mappedTeams = props.chosenTeams.map((team, i) => (
-        <TeamList
+        <ChosenTeams
         key={i}
         team={team}
         nameFn={props.nameFn}
