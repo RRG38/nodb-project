@@ -1,5 +1,5 @@
 const express = require('express'),
-    port = 4747,
+    port = 3000,
     app = express();
 
 app.use(express.json());
