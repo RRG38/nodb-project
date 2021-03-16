@@ -15,7 +15,7 @@ class Finder extends Component {
     }
 
     getAvailableTeams = () => {
-        axios.get('/api/')
+        axios.get('/api/teams')
             .then(res => {
                 this.setState({availableTeams: res.date});
             })

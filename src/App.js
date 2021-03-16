@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get('/api/chosen-team')
+    axios.get('/api/teams')
       .then(res => {
         this.setState({ chosenTeams: res.data})
       })
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
 addTeam(team){
-  axios.post('/api/chosen-team', {team: team})
+  axios.post('/api/chosenTeams', {team: team})
     .then(res => {
       this.setState({ chosenTeams: res.data })
     })
@@ -31,7 +31,7 @@ addTeam(team){
 }
 
 removeTeam = (id) => {
-  axios.delete(`/api/chosen-team/${id}`)
+  axios.delete(`/api/chosenTeams/${id}`)
     .then(res => {
       this.setState({ chosenTeams: res.data })
     })
